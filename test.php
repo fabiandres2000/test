@@ -30,6 +30,8 @@
     <link rel="stylesheet" href="css/responsive.css" />
     <!-- Custom CSS -->
     <link rel="stylesheet" href="css/custom.css" />
+	<link rel="stylesheet" href="css/table.css">
+	<link rel="stylesheet" href="css/cronometro.css">
 
     <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
@@ -62,8 +64,17 @@
         </nav>
     </header>
     <!-- End header -->
-	<div class="container" style="margin-top: 100px">
-		<h3><span span class="theme_color">Bienvenido: <?php echo $correo ?></span></h3>
+	<div class="container" style="margin-top: 100px">	
+		<div class="row">
+			<div class="col-6">
+				<h3><span span class="theme_color">Bienvenido: <?php echo $correo ?></span></h3>
+			</div>
+			<div class="col-6" style="text-align: right">
+				<div class="cronometro">
+					<div id="hms"></div>
+				</div>
+			</div>
+		</div>
 	</div>
     <!-- section -->
 	<div class="section tabbar_menu" style="margin-top: 100px; margin-bottom: 100px;">
@@ -72,30 +83,63 @@
 			   <div class="row">
 					<div class="col-md-12">
 						<div class="tab_menu">
-							<ul>
-							<li><a href="#"><span class="icon"><img src="images/i1.png" alt="#" /></span><span>University Life</span></a></li>
-							<li><a href="#"><span class="icon"><img src="images/i2.png" alt="#" /></span><span>Graduation</span></a></li>
-							<li><a href="#"><span class="icon"><img src="images/i3.png" alt="#" /></span><span>Athletics</span></a></li>
-							<li><a href="#"><span class="icon"><img src="images/i4.png" alt="#" /></span><span>Social</span></a></li>
-							<li><a href="#"><span class="icon"><img src="images/i5.png" alt="#" /></span><span>Location</span></a></li>
-							<li><a href="#"><span class="icon"><img src="images/i6.png" alt="#" /></span><span>Call us</span></a></li>
-							<li><a href="#"><span class="icon"><img src="images/i7.png" alt="#" /></span><span>Email</span></a></li>
-							</ul>
-						</div>
-					</div>
-				</div>
-				<div class="row">
-					<div class="col-md-12">
-						<div class="tab_menu" style="margin-top: 50px;">
-							<ul>
-								<li><a href="#"><span class="icon"><img src="images/i1.png" alt="#" /></span><span>University Life</span></a></li>
-								<li><a href="#"><span class="icon"><img src="images/i2.png" alt="#" /></span><span>Graduation</span></a></li>
-								<li><a href="#"><span class="icon"><img src="images/i3.png" alt="#" /></span><span>Athletics</span></a></li>
-								<li><a href="#"><span class="icon"><img src="images/i4.png" alt="#" /></span><span>Social</span></a></li>
-								<li><a href="#"><span class="icon"><img src="images/i5.png" alt="#" /></span><span>Location</span></a></li>
-								<li><a href="#"><span class="icon"><img src="images/i6.png" alt="#" /></span><span>Call us</span></a></li>
-								<li><a href="#"><span class="icon"><img src="images/i7.png" alt="#" /></span><span>Email</span></a></li>
-							</ul>
+							<div class="container">
+								<table id="customers">
+									<thead>
+										<tr>
+											<th>Pregunta</th>
+											<th>A</th>
+											<th>B</th>
+											<th>C</th>
+											<th>D</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td>Prueba</td>
+											<td>Prueba</td>
+											<td>Prueba</td>
+											<td>Prueba</td>
+											<td>Prueba</td>
+										</tr>
+										<tr>
+											<td>Prueba</td>
+											<td>Prueba</td>
+											<td>Prueba</td>
+											<td>Prueba</td>
+											<td>Prueba</td>
+										</tr>
+										<tr>
+											<td>Prueba</td>
+											<td>Prueba</td>
+											<td>Prueba</td>
+											<td>Prueba</td>
+											<td>Prueba</td>
+										</tr>
+										<tr>
+											<td>Prueba</td>
+											<td>Prueba</td>
+											<td>Prueba</td>
+											<td>Prueba</td>
+											<td>Prueba</td>
+										</tr>
+										<tr>
+											<td>Prueba</td>
+											<td>Prueba</td>
+											<td>Prueba</td>
+											<td>Prueba</td>
+											<td>Prueba</td>
+										</tr>
+										<tr>
+											<td>Prueba</td>
+											<td>Prueba</td>
+											<td>Prueba</td>
+											<td>Prueba</td>
+											<td>Prueba</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
 						</div>
 					</div>
 				</div>
@@ -126,36 +170,7 @@
 						</div>
 					</div>
 				</div>
-				<div class="row">
-					<div class="col-md-12">
-					<div class="tab_menu" style="margin-top: 50px;">
-						<ul>
-							<li><a href="#"><span class="icon"><img src="images/i1.png" alt="#" /></span><span>University Life</span></a></li>
-							<li><a href="#"><span class="icon"><img src="images/i2.png" alt="#" /></span><span>Graduation</span></a></li>
-							<li><a href="#"><span class="icon"><img src="images/i3.png" alt="#" /></span><span>Athletics</span></a></li>
-							<li><a href="#"><span class="icon"><img src="images/i4.png" alt="#" /></span><span>Social</span></a></li>
-							<li><a href="#"><span class="icon"><img src="images/i5.png" alt="#" /></span><span>Location</span></a></li>
-							<li><a href="#"><span class="icon"><img src="images/i6.png" alt="#" /></span><span>Call us</span></a></li>
-							<li><a href="#"><span class="icon"><img src="images/i7.png" alt="#" /></span><span>Email</span></a></li>
-						</ul>
-					</div>
-					</div>
-				</div>
-				<div class="row">
-					<div class="col-md-12">
-					<div class="tab_menu" style="margin-top: 50px;">
-						<ul>
-							<li><a href="#"><span class="icon"><img src="images/i1.png" alt="#" /></span><span>University Life</span></a></li>
-							<li><a href="#"><span class="icon"><img src="images/i2.png" alt="#" /></span><span>Graduation</span></a></li>
-							<li><a href="#"><span class="icon"><img src="images/i3.png" alt="#" /></span><span>Athletics</span></a></li>
-							<li><a href="#"><span class="icon"><img src="images/i4.png" alt="#" /></span><span>Social</span></a></li>
-							<li><a href="#"><span class="icon"><img src="images/i5.png" alt="#" /></span><span>Location</span></a></li>
-							<li><a href="#"><span class="icon"><img src="images/i6.png" alt="#" /></span><span>Call us</span></a></li>
-							<li><a href="#"><span class="icon"><img src="images/i7.png" alt="#" /></span><span>Email</span></a></li>
-						</ul>
-					</div>
-					</div>
-				</div>
+				
 				<div class="row" style="margin-top: 30px">			
 					<div class="col-3"></div>
 					<div class="col-3" style="text-align:center" >
@@ -203,7 +218,7 @@
         	<div class="container">
 				<div class="row">
 					<div class="col-12">
-						<p class="crp">© Copyrights 2019 design by html.design</p>
+						<p class="crp">© Copyrights 2022 design by Antonio Martinez</p>
 					</div>
 				</div>
 			</div>

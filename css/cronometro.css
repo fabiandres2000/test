@@ -1,0 +1,17 @@
+@font-face{
+    font-family:alarm;
+    src:url(../fonts/alarm.ttf);
+}
+
+#hms{
+    height:50px;
+    font-size:50px;
+    color:#000;
+    font-family: alarm;  
+}
+
+.cronometro {
+    position: absolute;
+    top: -30px;
+    width: 90%;
+}
