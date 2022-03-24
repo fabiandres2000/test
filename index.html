@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
     <!-- Site Metas -->
-    <title>Perfect - Responsive HTML5 Template</title>
+    <title>Test</title>
     <meta name="keywords" content="">
     <meta name="description" content="">
     <meta name="author" content="">
@@ -79,12 +79,15 @@
                                                <div class="row">
                                                    <div class="col-md-12">
                                                       <div class="tab_menu">
-                                                         <div class="row">
-                                                             <div class="col-2"></div>
-                                                             <div class="col-6" style="padding-top: 4%;"><input type="text" class="form-control" placeholder="Ingrese su Correo Electronico"></div>
-                                                             <div class="col-2" style="padding-top: -10px;"><a class="contact_bt" href="test.html">Comenzar Test</a></div>
-                                                             <div class="col-2"></div>
-                                                         </div>
+                                                        <form action="test.php" method="post">
+                                                            <div class="row">
+                                                                <div class="col-2"></div>
+                                                                <div class="col-6" style="padding-top: 4%;"><input name="correo" id="correo" type="text" class="form-control" placeholder="Ingrese su Correo Electronico" required></div>
+                                                                <div class="col-2" style="padding-top: -10px;"><button class="contact_bt" type="submit" >Comenzar Test</button></div>
+                                                                <div class="col-2"></div>
+                                                            </div>
+                                                        </form>
+                                                         
                                                       </div>
                                                    </div>
                                                </div>
