@@ -20,3 +20,13 @@ text-align: left;
 background-color: #04AA6D;
 color: white;
 }
+
+.cen {
+   text-align: center;
+}
+
+input[type=radio] {
+   border: 0px;
+   width: 100%;
+   height: 1.5em;
+}
