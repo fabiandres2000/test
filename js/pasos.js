@@ -1,47 +1,7 @@
-$(document).ready(function(){
-    for (let index = 2; index <= 6; index++) {
-       document.getElementById("paso_"+index).style.display = "none"
-    }
-});
-
 window.onload = function() {
     init();
+    $('html, body').animate({scrollTop:500}, 1500);
 };
-
-function GuardarRespuestas(id){
-    id_form = "paso_"+id;
-    Pasar(id);
-}
-
-function Pasar(id) {
-    id = id+1;
-    id = "paso_"+id;
-    for (let index = 1; index <= 6; index++) {
-        let name = "paso_"+index;
-        if(id == name){
-            document.getElementById(name).style.display = "block"
-        }else{
-            document.getElementById(name).style.display = "none"
-        }
-    }
-    $('html, body').animate({scrollTop:600}, 1500);
-}
-
-function Anterior(id){
-    id = id-1;
-    id = "paso_"+id;
-    for (let index = 1; index <= 6; index++) {
-        let name = "paso_"+index;
-        if(id == name){
-            document.getElementById(name).style.display = "block"
-        }else{
-            document.getElementById(name).style.display = "none"
-        }
-    }
-    $('html, body').animate({scrollTop:600}, 1500);
-}
-
-
 
 function init(){
     h = 0;
@@ -68,4 +28,9 @@ function escribir(){
     if (h<10){hAux="0"+h;}else{hAux=h;}
 
     document.getElementById("hms").innerHTML = hAux + ":" + mAux + ":" + sAux; 
+}
+
+
+function GuardarRespuestas(id){
+    id_form = "paso_"+id;
 }

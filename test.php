@@ -3,6 +3,11 @@
 	$correo = $_POST["correo"];
 	$sql = "INSERT INTO `respuestas` (`correo`) VALUES ('$correo')";
 	mysqli_query($con, $sql);
+
+	//ver por cual paso va
+	$sql = "SELECT * FROM `respuestas` WHERE `correo`='$correo'";
+	$result = $con->query($sql);
+	$fila = mysqli_fetch_array($result);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -119,6 +124,9 @@
     <!-- section -->
 	<div class="section tabbar_menu" style="margin-top: 100px; margin-bottom: 100px;">
 	   <div class="container">
+		   <?php 
+				if($fila[41] == "" && $fila[82] == "" && $fila[123] == "" && $fila[164] == "" && $fila[205] == "" && $fila[246] == "" ) {
+			?>
 		   <form action="" method="post" id="paso_1">
 			   <div class="row">
 					<div class="col-md-12">
@@ -488,15 +496,16 @@
 				</div>
 				<div class="row" style="margin-top: 30px">			
 					<div class="col-3"></div>
-					<div class="col-3" style="text-align:center" >
-						<a style="width: 100%; color: white" onclick="Anterior(1)" class="btn btn-danger">Anterior</a>	
-					</div>
-					<div class="col-3" style="text-align:center" >
+					<div class="col-6" style="text-align:center" >
 						<a style="width: 100%; color: white" onclick="GuardarRespuestas(1)" class="btn btn-success">Siguiente</a>
 					</div>
 					<div class="col-3"></div>	
 				</div>
 		   </form>
+		   <?php } ?>
+		   <?php 
+				if($fila[41] != "" && $fila[82] == "" && $fila[123] == "" && $fila[164] == "" && $fila[205] == "" && $fila[246] == "" ) {
+			?>
 		   <form action="" method="post" id="paso_2">
 			   <div class="row">
 					<div class="col-md-12">
@@ -867,15 +876,16 @@
 				
 				<div class="row" style="margin-top: 30px">			
 					<div class="col-3"></div>
-					<div class="col-3" style="text-align:center" >
-						<a style="width: 100%; color: white" onclick="Anterior(2)" class="btn btn-danger">Anterior</a>	
-					</div>
-					<div class="col-3" style="text-align:center" >
+					<div class="col-6" style="text-align:center" >
 						<a style="width: 100%; color: white" onclick="GuardarRespuestas(2)" class="btn btn-success">Siguiente</a>
 					</div>
 					<div class="col-3"></div>	
 				</div>
 		   </form>
+		   <?php } ?>
+		   <?php 
+				if($fila[41] != "" && $fila[82] != "" && $fila[123] == "" && $fila[164] == "" && $fila[205] == "" && $fila[246] == "" ) {
+			?>
 		   <form action="" method="post" id="paso_3">
 			   <div class="row">
 					<div class="col-md-12">
@@ -1245,15 +1255,16 @@
 				</div>
 				<div class="row" style="margin-top: 30px">			
 					<div class="col-3"></div>
-					<div class="col-3" style="text-align:center" >
-						<a style="width: 100%; color: white" onclick="Anterior(3)" class="btn btn-danger">Anterior</a>	
-					</div>
-					<div class="col-3" style="text-align:center" >
+					<div class="col-6" style="text-align:center" >
 						<a style="width: 100%; color: white" onclick="GuardarRespuestas(3)" class="btn btn-success">Siguiente</a>
 					</div>
 					<div class="col-3"></div>	
 				</div>
 		   </form>
+		   <?php } ?>
+		   <?php 
+				if($fila[41] != "" && $fila[82] != "" && $fila[123] != "" && $fila[164] == "" && $fila[205] == "" && $fila[246] == "" ) {
+			?>
 		   <form action="" method="post" id="paso_4">
 			   <div class="row">
 					<div class="col-md-12">
@@ -1623,15 +1634,16 @@
 				</div>
 				<div class="row" style="margin-top: 30px">			
 					<div class="col-3"></div>
-					<div class="col-3" style="text-align:center" >
-						<a style="width: 100%; color: white" onclick="Anterior(4)" class="btn btn-danger">Anterior</a>	
-					</div>
-					<div class="col-3" style="text-align:center" >
+					<div class="col-6" style="text-align:center" >
 						<a style="width: 100%; color: white" onclick="GuardarRespuestas(4)" class="btn btn-success">Siguiente</a>
 					</div>
 					<div class="col-3"></div>	
 				</div>
 		   </form>
+		   <?php } ?>
+		   <?php 
+				if($fila[41] != "" && $fila[82] != "" && $fila[123] != "" && $fila[164] != "" && $fila[205] == "" && $fila[246] == "" ) {
+			?>
 		   <form action="" method="post" id="paso_5">
 			   <div class="row">
 					<div class="col-md-12">
@@ -2001,15 +2013,16 @@
 				</div>
 				<div class="row" style="margin-top: 30px">			
 					<div class="col-3"></div>
-					<div class="col-3" style="text-align:center" >
-						<a style="width: 100%; color: white" onclick="Anterior(5)" class="btn btn-danger">Anterior</a>	
-					</div>
-					<div class="col-3" style="text-align:center" >
+					<div class="col-6" style="text-align:center" >
 						<a style="width: 100%; color: white" onclick="GuardarRespuestas(5)" class="btn btn-success">Siguiente</a>
 					</div>
 					<div class="col-3"></div>	
 				</div>
 		   </form>
+		   <?php } ?>
+		   <?php 
+				if($fila[41] != "" && $fila[82] != "" && $fila[123] != "" && $fila[164] != "" && $fila[205] != "" && $fila[246] == "" ) {
+			?>
 		   <form action="" method="post" id="paso_6">
 			   <div class="row">
 					<div class="col-md-12">
@@ -2379,15 +2392,35 @@
 				</div>
 				<div class="row" style="margin-top: 30px">			
 					<div class="col-3"></div>
-					<div class="col-3" style="text-align:center" >
-						<a style="width: 100%; color: white" onclick="Anterior(6)" class="btn btn-danger">Anterior</a>	
-					</div>
-					<div class="col-3" style="text-align:center" >
+					<div class="col-6" style="text-align:center" >
 						<a style="width: 100%; color: white" onclick="GuardarRespuestas(6)" class="btn btn-success">Siguiente</a>
 					</div>
 					<div class="col-3"></div>	
 				</div>
-		   </form>
+		    </form>
+		    <?php } ?>
+		    <?php 
+				if($fila[41] != "" && $fila[82] != "" && $fila[123] != "" && $fila[164] != "" && $fila[205] != "" && $fila[246] != ""  && $fila[247] == "" ) {
+			?>
+			<div class="row">
+				<div class="col-md-12">
+					<div class="tab_menu">
+						<div class="container">
+						<div class="alert alert-success" role="alert">
+							<div class="row">
+								<div class="col-lg-9">
+									<h3>Ya usted respondió la totalidad de las preguntas <br> para calificar el test, haga clic en el siguiente botón</h3>
+								</div>
+								<div class="col-lg-3">
+									<button class="btn btn-success" style="width: 100%;height: 100%; font-size: 28px">Calificar</button>
+								</div>
+							</div>
+						</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<?php } ?>
 	   </div>
 	</div>
 	<!-- end section -->
@@ -2420,5 +2453,4 @@
     <script src="js/custom.js"></script>
 	<script src="js/pasos.js"></script>
 </body>
-
 </html>
