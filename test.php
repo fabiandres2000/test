@@ -127,7 +127,7 @@
 		   <?php 
 				if($fila[41] == "" && $fila[82] == "" && $fila[123] == "" && $fila[164] == "" && $fila[205] == "" && $fila[246] == "" ) {
 			?>
-		   <form action="php/guardar_respuestas.php?paso=paso_1" method="post" id="paso_1">
+		   <form action="php/guardar_respuestas.php?paso=paso_1&correo=<?php echo $correo ?>" method="post" id="paso_1">
 			   <div class="row">
 					<div class="col-md-12">
 						<div class="tab_menu">
@@ -506,7 +506,7 @@
 		   <?php 
 				if($fila[41] != "" && $fila[82] == "" && $fila[123] == "" && $fila[164] == "" && $fila[205] == "" && $fila[246] == "" ) {
 			?>
-		   <form action="php/guardar_respuestas.php?paso=paso_2" method="post" id="paso_2">
+		   <form action="php/guardar_respuestas.php?paso=paso_2&correo=<?php echo $correo ?>" method="post" id="paso_2">
 			   <div class="row">
 					<div class="col-md-12">
 						<div class="tab_menu">
@@ -886,7 +886,7 @@
 		   <?php 
 				if($fila[41] != "" && $fila[82] != "" && $fila[123] == "" && $fila[164] == "" && $fila[205] == "" && $fila[246] == "" ) {
 			?>
-		   <form action="php/guardar_respuestas.php?paso=paso_3" method="post" id="paso_3">
+		   <form action="php/guardar_respuestas.php?paso=paso_3&correo=<?php echo $correo ?>" method="post" id="paso_3">
 			   <div class="row">
 					<div class="col-md-12">
 						<div class="tab_menu">
@@ -1265,7 +1265,7 @@
 		   <?php 
 				if($fila[41] != "" && $fila[82] != "" && $fila[123] != "" && $fila[164] == "" && $fila[205] == "" && $fila[246] == "" ) {
 			?>
-		   <form action="php/guardar_respuestas.php?paso=paso_4" method="post" id="paso_4">
+		   <form action="php/guardar_respuestas.php?paso=paso_4&correo=<?php echo $correo ?>" method="post" id="paso_4">
 			   <div class="row">
 					<div class="col-md-12">
 						<div class="tab_menu">
@@ -1644,7 +1644,7 @@
 		   <?php 
 				if($fila[41] != "" && $fila[82] != "" && $fila[123] != "" && $fila[164] != "" && $fila[205] == "" && $fila[246] == "" ) {
 			?>
-		   <form action="php/guardar_respuestas.php?paso=paso_5" method="post" id="paso_5">
+		   <form action="php/guardar_respuestas.php?paso=paso_5&correo=<?php echo $correo ?>" method="post" id="paso_5">
 			   <div class="row">
 					<div class="col-md-12">
 						<div class="tab_menu">
@@ -2023,7 +2023,7 @@
 		   <?php 
 				if($fila[41] != "" && $fila[82] != "" && $fila[123] != "" && $fila[164] != "" && $fila[205] != "" && $fila[246] == "" ) {
 			?>
-		   <form action="php/guardar_respuestas.php?paso=paso_6" method="post" id="paso_6">
+		   <form action="php/guardar_respuestas.php?paso=paso_6&correo=<?php echo $correo ?>" method="post" id="paso_6">
 			   <div class="row">
 					<div class="col-md-12">
 						<div class="tab_menu">
