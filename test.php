@@ -2449,6 +2449,12 @@
 								</div>
 							</div>
 						</div>
+						<br>
+							<div class="row" style="text-align: center;">
+								<div class="col-12">
+									<a style="width: 40%;" href="index.html" class="btn btn-danger" type="button">Volver</a>
+								</div>
+							</div>
 						</div>
 					</div>
 				</div>

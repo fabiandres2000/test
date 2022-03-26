@@ -94,6 +94,12 @@ if(isset($_SESSION['logueado'])){
                     <div class="tab_menu">
                         <div class="container">
                             <div class="row">
+                                <div class="col-lg-12" style="text-align: center;">
+                                    <h2>Resultados para el usuario: <?php echo $fila[1] ?></h2>
+                                </div>
+                            </div>
+                            <hr>
+                            <div class="row">
                                 <div class="col-lg-6">
                                     <table id="customers" style="width: 100% !important;">
                                         <thead>
@@ -349,7 +355,7 @@ if(isset($_SESSION['logueado'])){
                                     <hr>
                                     <div class="row">
                                     <div class="col-6">
-                                            <button style="width: 100%; height: 60px; margin-top: 14px" onclick="exportar(<?php echo $fila[0] ?>)" class="btn btn-info">PDF</button>
+                                            <button style="width: 100%; height: 60px; margin-top: 14px" onclick="exportar(<?php echo $fila[0] ?>)" class="btn btn-info">Exportar a PDF</button>
                                         </div>
                                         <div class="col-6">
                                             <button style="width: 100%; height: 60px; margin-top: 14px" onclick="javascript:history.back()" class="btn btn-danger">Volver</button>

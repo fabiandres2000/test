@@ -49,6 +49,10 @@ $fila = mysqli_fetch_array($result);
     <div style="width: 100%;text-align: center">
          <!-- Div to capture. -->
         <div id="root" style="margin:0px auto;">
+            <div style="text-align: center; width: 100%">
+                <h2>Resultados para el usuario: <?php echo $fila[1] ?></h2>
+            </div>
+            <hr>
             <div style="width: 100%;">
                 <table id="customers" style="width: 100% !important;">
                     <thead>
@@ -315,7 +319,7 @@ $fila = mysqli_fetch_array($result);
 
             // Generate the PDF.
             html2pdf().from(element).set({
-            margin: 1,
+            margin: 0.6,
             filename: '<?php echo $fila[1] ?>.pdf',
             html2canvas: { scale: 2 },
             jsPDF: {orientation: 'portrait', unit: 'in', format: 'letter', compressPDF: true}
