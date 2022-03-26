@@ -188,17 +188,6 @@ if(isset($_SESSION['logueado'])){
     <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
     <script src="//cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js"></script>
     <script>
-        window.onload = function() {
-            Swal.fire({
-                position: 'center',
-                icon: "success",
-                title: "Bienvenido",
-                showConfirmButton: false,
-                timer: 2500
-            }); 
-           
-        };
-        
         setTimeout(()=>{
             $('#customers').DataTable({
                 language: {

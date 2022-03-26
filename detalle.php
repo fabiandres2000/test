@@ -347,7 +347,14 @@ if(isset($_SESSION['logueado'])){
                                     </table>
                                     <br>
                                     <hr>
-                                    <button style="width: 100%; height: 60px; margin-top: 14px" onclick="javascript:history.back()" class="btn btn-danger">Volver</button>
+                                    <div class="row">
+                                    <div class="col-6">
+                                            <button style="width: 100%; height: 60px; margin-top: 14px" onclick="exportar(<?php echo $fila[0] ?>)" class="btn btn-info">PDF</button>
+                                        </div>
+                                        <div class="col-6">
+                                            <button style="width: 100%; height: 60px; margin-top: 14px" onclick="javascript:history.back()" class="btn btn-danger">Volver</button>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -419,6 +426,7 @@ if(isset($_SESSION['logueado'])){
     <script src="js/images-loded.min.js"></script>
     <script src="js/custom.js"></script>
     <script src="js/registro_usuario.js"></script>
+    <script src="js/exportar.js"></script>
 </body>
 </html>
 <?php
