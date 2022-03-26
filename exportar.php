@@ -320,7 +320,7 @@ $fila = mysqli_fetch_array($result);
             // Generate the PDF.
             html2pdf().from(element).set({
             margin: 0.6,
-            filename: '<?php echo $fila[1] ?>.pdf',
+            filename: '<?php echo $fila[39] ?>.pdf',
             html2canvas: { scale: 2 },
             jsPDF: {orientation: 'portrait', unit: 'in', format: 'letter', compressPDF: true}
             }).save();    

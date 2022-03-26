@@ -90,12 +90,13 @@
         </div>
     </div>
     <div class="container" style="background-color: white; height: 111px; padding-top: 20px; max-width: 800px; border-radius: 25px;box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);">
-        <form action="test.php" method="post">
+        <form action="php/verificar.php" id="form_init" method="post">
             <div class="row">
-                <div class="col-2"></div>
-                <div class="col-6" style="padding-top: 15px;"><input name="correo" id="correo" type="email" class="form-control" placeholder="Ingrese su Correo Electronico" required></div>
+                <div class="col-1"></div>
+                <div class="col-4" style="padding-top: 15px;"><input name="correo" id="correo" type="email" class="form-control" placeholder="Correo Electronico" required></div>
+                <div class="col-4" style="padding-top: 15px;"><input name="nombre" id="nombre" type="text" class="form-control" placeholder="Nombre Completo" required></div>
                 <div class="col-2" style="padding-top: -10px;"><button style="cursor: pointer;" class="contact_bt" type="submit" >Comenzar Test</button></div>
-                <div class="col-2"></div>
+                <div class="col-1"></div>
             </div>
         </form>
     </div>
@@ -161,7 +162,7 @@
     <script src="js/images-loded.min.js"></script>
     <script src="js/custom.js"></script>
     <script src="js/login.js"></script>
-	
+	<script src="js/verificar.js"></script>
 </body>
 
 </html>

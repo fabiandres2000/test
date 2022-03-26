@@ -647,12 +647,12 @@ a.navbar-brand img {
 }
 
 .contact_bt {
-    width: 180px;
-    height: 50px;
+	width: 138px;
+    height: 46px;
     background: #d4a81e;
     color: #fff;
     float: left;
-    line-height: 50px;
+    line-height: 0px;
     text-align: center;
     font-size: 18px;
     font-weight: 500;

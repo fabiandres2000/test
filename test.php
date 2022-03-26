@@ -1,6 +1,7 @@
 <?php 
 	include_once("conexion.php");
-	$correo = $_POST["correo"];
+	$correo = $_GET["correo"];
+	$nombre = $_GET["nombre"];
 
 	//ver por cual paso va
 	$sql = "SELECT * FROM `respuestas` WHERE `correo`='$correo'";
@@ -8,7 +9,7 @@
 	
 	if(mysqli_num_rows($result) == 0){
 		//insert si no existe
-		$sql = "INSERT INTO `respuestas` (`correo`) VALUES ('$correo')";
+		$sql = "INSERT INTO `respuestas` (`correo`, `nombre_completo`) VALUES ('$correo', '$nombre')";
 		mysqli_query($con, $sql);
 
 		//ver por cual paso va
@@ -2442,7 +2443,7 @@
 						<div class="alert alert-success" role="alert">
 							<div class="row">
 								<div class="col-lg-9" style="padding: 15px 10px;">
-									<h1 style="font-size: 25px;font-weight: bold;color: #487449;">Ya usted respondió respondio este cuestionario.</h1>
+									<h1 style="font-size: 25px;font-weight: bold;color: #487449;">Ya usted ha finalizado  este cuestionario.</h1>
 								</div>
 								<div class="col-lg-3" style="text-align: right">
 									<img style="width: 30%;" src="utils/check.png" alt="ok">
