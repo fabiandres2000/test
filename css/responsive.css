@@ -11,10 +11,10 @@
          font-size: 26px;
     }
      .contact_bt {
-         margin-top: 25px;
+         margin-top: 9px;
     }
      .slide_text {
-         margin-top: 70px;
+         margin-top: 145px;
     }
 	.social_icon {
     margin-bottom: 30px;
@@ -306,7 +306,6 @@ a.navbar-brand img {
     }
      .slide_text {
          margin-top: 10%;
-		 display:none;
     }
      .slide_text h3 {
          font-size: 20px;
@@ -318,18 +317,7 @@ a.navbar-brand img {
      .slide_text p {
          display: none;
     }
-     .contact_bt {
-         width: 90px;
-         height: 35px;
-         background: #07528d;
-         color: #fff;
-         float: left;
-         line-height: 36px;
-         text-align: center;
-         font-size: 14px;
-         font-weight: 300;
-         margin-top: 5px;
-    }
+     
      .top-header #navbar-wd {
          padding-right: 0;
     }

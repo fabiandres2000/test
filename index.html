@@ -27,6 +27,9 @@
     <link rel="stylesheet" href="css/responsive.css" />
     <!-- Custom CSS -->
     <link rel="stylesheet" href="css/custom.css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 
     <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
@@ -35,7 +38,7 @@
 
 </head>
 
-<body id="home" data-spy="scroll" data-target="#navbar-wd" data-offset="98">
+<body id="home" data-spy="scroll" data-target="#navbar-wd" data-offset="98" style="background-image:url(images/banner_img.png);">
 
     <!-- LOADER -->
     <div id="preloader">
@@ -50,12 +53,14 @@
     <header class="top-header">
         <nav class="navbar header-nav navbar-expand-lg">
             <div class="container-fluid">
-                <a class="navbar-brand" href="index.html"><img src="images/logo.png" alt="image"></a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-wd" aria-controls="navbar-wd" aria-expanded="false" aria-label="Toggle navigation">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </button>
+                <div class="row" style="width: 100%;">
+                    <div class="col-4">
+                        <a class="navbar-brand" href="index.html"><img src="images/logo.png" alt="image"></a>
+                    </div>
+                    <div class="col-8" style="text-align:right;padding-top: 20px;">
+                        <button class="btn btn-info"  data-toggle="modal" data-target="#myModal" >Iniciar sesión</button>
+                    </div>
+                </div>
             </div>
         </nav>
     </header>
@@ -66,31 +71,13 @@
         <div class="container-fluid">
             <div class="row">
                 <div class="pogoSlider" id="js-main-slider">
-                    <div class="pogoSlider-slide" style="background-image:url(images/banner_img.png);">
+                    <div class="pogoSlider-slide">
                         <div class="container">
                             <div class="row">
                                 <div class="col-md-12">
                                     <div class="slide_text">
                                         <h3>Instituto Colombiano de Psicometría <br><span span class="theme_color">Invierte bien, Invierte en ti. Capacítate y Asesórate con Nosotros</span></h3>
                                         <br>
-                                        <div class="section tabbar_menu" style="margin-top: 50px;">
-                                            <div class="container">
-                                               <div class="row">
-                                                   <div class="col-md-12">
-                                                      <div class="tab_menu">
-                                                        <form action="test.php" method="post">
-                                                            <div class="row">
-                                                                <div class="col-2"></div>
-                                                                <div class="col-6" style="padding-top: 4%;"><input name="correo" id="correo" type="text" class="form-control" placeholder="Ingrese su Correo Electronico" required></div>
-                                                                <div class="col-2" style="padding-top: -10px;"><button class="contact_bt" type="submit" >Comenzar Test</button></div>
-                                                                <div class="col-2"></div>
-                                                            </div>
-                                                        </form>
-                                                         
-                                                      </div>
-                                                   </div>
-                                               </div>
-                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -100,6 +87,17 @@
                 <!-- .pogoSlider -->
             </div>
         </div>
+    </div>
+    <div class="container" style="background-color: white; height: 111px; padding-top: 20px; max-width: 800px; border-radius: 25px;box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);">
+        <form action="test.php" method="post">
+            <div class="row">
+                <div class="col-2"></div>
+                <div class="col-6" style="padding-top: 15px;"><input name="correo" id="correo" type="text" class="form-control" placeholder="Ingrese su Correo Electronico" required></div>
+                <div class="col-2" style="padding-top: -10px;"><button style="cursor: pointer;" class="contact_bt" type="submit" >Comenzar Test</button></div>
+                <div class="col-2"></div>
+            </div>
+        </form>
+    </div>
     </div>
     <!-- End Banner -->
 
@@ -115,6 +113,38 @@
 		</div>
 	</footer>
 
+    <!-- Modal -->
+    <div class="modal fade" id="myModal" role="dialog">
+        <div class="modal-dialog">
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">Iniciar sesión</h4>
+            </div> 
+            <form action="">
+                <div class="modal-body">
+                        <div class="row">
+                            <div class="col-12">
+                                <input required type="text" class="form-control" placeholder="Usuario">
+                            </div>
+                        </div>
+                        <br>
+                        <div class="row">
+                            <div class="col-12">
+                                <input required type="password" class="form-control" placeholder="Contraseña">
+                            </div>
+                        </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-success">Entrar</button>
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+                </div>
+            </form>
+        </div>
+        
+        </div>
+    </div>
+  
     <!-- ALL JS FILES -->
     <script src="js/jquery.min.js"></script>
 	<script src="js/popper.min.js"></script>

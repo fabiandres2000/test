@@ -1,13 +1,23 @@
 <?php 
 	include_once("conexion.php");
 	$correo = $_POST["correo"];
-	$sql = "INSERT INTO `respuestas` (`correo`) VALUES ('$correo')";
-	mysqli_query($con, $sql);
 
 	//ver por cual paso va
 	$sql = "SELECT * FROM `respuestas` WHERE `correo`='$correo'";
 	$result = $con->query($sql);
-	$fila = mysqli_fetch_array($result);
+	
+	if(mysqli_num_rows($result) == 0){
+		//insert si no existe
+		$sql = "INSERT INTO `respuestas` (`correo`) VALUES ('$correo')";
+		mysqli_query($con, $sql);
+
+		//ver por cual paso va
+		$sql = "SELECT * FROM `respuestas` WHERE `correo`='$correo'";
+		$result = $con->query($sql);
+		$fila = mysqli_fetch_array($result);
+	}else{
+		$fila = mysqli_fetch_array($result);
+	}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -2408,11 +2418,34 @@
 						<div class="container">
 						<div class="alert alert-success" role="alert">
 							<div class="row">
-								<div class="col-lg-9">
-									<h3>Ya usted respondió la totalidad de las preguntas <br> para calificar el test, haga clic en el siguiente botón</h3>
+								<div class="col-lg-9" style="padding: 15px 10px;">
+									<h1 style="font-size: 25px;font-weight: bold;color: #487449;">Ya usted respondió la totalidad de las preguntas <br> para finalizar el test, haga clic en el siguiente botón</h1>
 								</div>
 								<div class="col-lg-3">
-									<button class="btn btn-success" style="width: 100%;height: 100%; font-size: 28px">Calificar</button>
+									<button onclick="calificar('<?php echo $correo ?>')" class="btn btn-success" style="width: 100%;height: 100%; font-size: 28px; font-weight: bold;">Finalizar <br> Intento</button>
+								</div>
+							</div>
+						</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<?php } ?>
+
+			<?php 
+				if($fila[41] != "" && $fila[82] != "" && $fila[123] != "" && $fila[164] != "" && $fila[205] != "" && $fila[246] != ""  && $fila[247] != "" ) {
+			?>
+			<div class="row">
+				<div class="col-md-12">
+					<div class="tab_menu">
+						<div class="container">
+						<div class="alert alert-success" role="alert">
+							<div class="row">
+								<div class="col-lg-9" style="padding: 15px 10px;">
+									<h1 style="font-size: 25px;font-weight: bold;color: #487449;">Ya usted respondió respondio este cuestionario.</h1>
+								</div>
+								<div class="col-lg-3" style="text-align: right">
+									<img style="width: 30%;" src="utils/check.png" alt="ok">
 								</div>
 							</div>
 						</div>

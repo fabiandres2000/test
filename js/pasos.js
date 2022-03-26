@@ -323,3 +323,55 @@ $('#paso_6').submit(function (ev) {
     });
     ev.preventDefault();
 });
+
+
+function calificar(correo){
+  $.ajax({
+    type: "get", 
+    url: "php/calificar.php?correo="+correo,
+    beforeSend: function(){
+      let timerInterval
+      Swal.fire({
+        title: 'Calificando',
+        html: 'Espere un momento...',
+        timer: 400000,
+        timerProgressBar: true,
+        allowOutsideClick: false,
+        didOpen: () => {
+          Swal.showLoading()
+          const b = Swal.getHtmlContainer().querySelector('b')
+          timerInterval = setInterval(() => {
+           
+          }, 100)
+        },
+        willClose: () => {
+          clearInterval(timerInterval)
+        }
+      }).then((result) => {
+        if (result.dismiss === Swal.DismissReason.timer) {
+        }
+      });          
+    }, 
+    success: function (data) { 
+      var jsonData = JSON.parse(data);
+      //guardo para hacer el reporte
+      localStorage.setItem("reporte", data);
+    
+      if (jsonData.success == 1) {
+        icono = "success";
+        setTimeout(function(){ location.reload(); }, 4500);
+      }else{
+        icono = "error";
+      }
+
+      Swal.fire({
+        position: 'center',
+        icon: icono,
+        title: jsonData.mensaje,
+        showConfirmButton: false,
+        timer: 4500
+      });
+    } 
+  });
+  ev.preventDefault();
+}
