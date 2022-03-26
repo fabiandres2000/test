@@ -1,5 +1,10 @@
 <?php
 session_start();
+include_once("conexion.php");
+
+$sql = "SELECT * FROM `calificaciones`";
+$result = $con->query($sql);
+
 if(isset($_SESSION['logueado'])){ 
 ?> 
 <!DOCTYPE html>
@@ -35,6 +40,8 @@ if(isset($_SESSION['logueado'])){
 	<link rel="stylesheet" href="css/cronometro.css">
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.1/jquery.min.js" type="text/javascript"></script>
 	<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <link rel="stylesheet" href="//cdn.datatables.net/1.11.3/css/jquery.dataTables.min.css">
+   
     <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
       <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
@@ -60,7 +67,9 @@ if(isset($_SESSION['logueado'])){
                     <div class="col-4">
                         <a class="navbar-brand" href="index.html"><img src="images/logo.png" alt="image"></a>
                     </div>
-                    <div class="col-8" style="text-align:right;padding-top: 20px;">
+                    <div class="col-3"></div>
+                    <div class="col-5" style="text-align:right;padding-top: 20px;">
+                        <button data-toggle="modal" data-target="#myModal" class="btn btn-info"  href="php/cerrar_sesion.php">Agregar Usuario</button>
                         <a class="btn btn-danger"  href="php/cerrar_sesion.php">Cerrar sesión</a>
                     </div>
                 </div>
@@ -83,26 +92,28 @@ if(isset($_SESSION['logueado'])){
                 <div class="col-md-12">
                     <div class="tab_menu">
                         <div class="container">
-                            <table id="customers">
+                            <table id="customers" style="width: 100% !important;">
                                 <thead>
                                     <tr>
-                                        <th>Pregunta</th>
-                                        <th>Total desacuerdo</th>
-                                        <th>Desacuerdo</th>
-                                        <th>Neutral</th>
-                                        <th>De acuerdo</th>
-                                        <th>Totalmente de acuerdo</th>
+                                        <th>Correo</th>
+                                        <th>Negativismo</th>
+                                        <th>Aquiescencia</th>
+                                        <th>Acciones</th>
                                     </tr>
                                 </thead>
                                 <tbody>
+                                    <?php 
+                                        while($fila = mysqli_fetch_array($result)){
+                                    ?>
                                     <tr>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
+                                        <td style="text-align: center;"><?php echo $fila[1] ?></td>
+                                        <td style="text-align: center;"><?php echo $fila[37] ?></td>
+                                        <td style="text-align: center;"><?php echo $fila[38] ?></td>
+                                        <td style="text-align: center;"><a class="btn btn-success" href="detalle.php?id=<?php echo $fila[0] ?>">Ver Detalles</a></td>
                                     </tr>
+                                    <?php 
+                                        }
+                                    ?>
                                 </tbody>
                             </table>
                         </div>
@@ -125,7 +136,40 @@ if(isset($_SESSION['logueado'])){
 			</div>
 		</div>
 	</footer>
+    
+
+        <!-- Modal -->
+    <div class="modal fade" id="myModal" role="dialog">
+        <div class="modal-dialog">
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">Registro de nuevo usuario</h4>
+            </div> 
+            <form action="php/registro.php" method="post" id="rusuario">
+                <div class="modal-body">
+                        <div class="row">
+                            <div class="col-12">
+                                <input name="usuario" id="usuario" required type="text" class="form-control" placeholder="Usuario">
+                            </div>
+                        </div>
+                        <br>
+                        <div class="row">
+                            <div class="col-12">
+                                <input name="pass" id="pass" required type="text" class="form-control" placeholder="Contraseña">
+                            </div>
+                        </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-success">Registrar</button>
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">Cerrar</button>
+                </div>
+            </form>
+        </div>
+        </div>
+    </div>
   
+
     <!-- ALL JS FILES -->
     <script src="js/jquery.min.js"></script>
 	<script src="js/popper.min.js"></script>
@@ -140,6 +184,46 @@ if(isset($_SESSION['logueado'])){
     <script src="js/isotope.min.js"></script>
     <script src="js/images-loded.min.js"></script>
     <script src="js/custom.js"></script>
+    <script src="js/registro_usuario.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script src="//cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js"></script>
+    <script>
+        window.onload = function() {
+            Swal.fire({
+                position: 'center',
+                icon: "success",
+                title: "Bienvenido",
+                showConfirmButton: false,
+                timer: 2500
+            }); 
+           
+        };
+        
+        setTimeout(()=>{
+            $('#customers').DataTable({
+                language: {
+                    "decimal": "",
+                    "emptyTable": "No hay información",
+                    "info": "Mostrando _START_ a _END_ de _TOTAL_ Entradas",
+                    "infoEmpty": "Mostrando 0 to 0 of 0 Entradas",
+                    "infoFiltered": "(Filtrado de _MAX_ total entradas)",
+                    "infoPostFix": "",
+                    "thousands": ",",
+                    "lengthMenu": "Mostrar _MENU_ Entradas",
+                    "loadingRecords": "Cargando...",
+                    "processing": "Procesando...",
+                    "search": "Buscar:",
+                    "zeroRecords": "Sin resultados encontrados",
+                    "paginate": {
+                        "first": "Primero",
+                        "last": "Ultimo",
+                        "next": "Siguiente",
+                        "previous": "Anterior"
+                    }
+                },
+            });
+        },1000)    
+    </script>
 </body>
 </html>
 <?php

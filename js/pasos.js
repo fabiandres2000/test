@@ -1,8 +1,3 @@
-window.onload = function() {
-    init();
-    $('html, body').animate({scrollTop:500}, 1500);
-};
-
 function init(){
     h = 0;
     m = 0;

@@ -2485,5 +2485,11 @@
     <script src="js/images-loded.min.js"></script>
     <script src="js/custom.js"></script>
 	<script src="js/pasos.js"></script>
+	<script>
+		window.onload = function() {
+			init();
+    		$('html, body').animate({scrollTop:500}, 1500);    
+        };
+    </script>
 </body>
 </html>
