@@ -70,7 +70,7 @@
     $sql3 ="UPDATE `respuestas` SET `estado_calificado` = 1 WHERE `correo` = '$correo'";
 
     if(mysqli_query($con, $sql2) && mysqli_query($con, $sql3)){
-        echo json_encode(array('success' => 1, 'mensaje' => "Aquiescencia: ".$Aquiescencia."<br> Negativismo: ".$Negativismo));
+        echo json_encode(array('success' => 1, 'mensaje' => "Agradecemos su colaboración y recuerde que los resultados de esta prueba servirán para su crecimiento y desarrollo profesional."));
     }else{ 
         echo json_encode(array('success' => 0, 'mensaje' => "Error al guardar en la base de datos"));
     }
