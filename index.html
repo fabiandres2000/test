@@ -36,7 +36,8 @@
       <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
       <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="icon" href="images/icon.png">
 </head>
 
 <body id="home" data-spy="scroll" data-target="#navbar-wd" data-offset="98" style="background-image:url(images/banner_img.png);">
@@ -59,7 +60,7 @@
                         <a class="navbar-brand" href="index.html"><img src="images/logo.png" alt="image"></a>
                     </div>
                     <div class="col-8" style="text-align:right;padding-top: 20px;">
-                        <button class="btn btn-info"  data-toggle="modal" data-target="#myModal" >Iniciar sesión</button>
+                        <button class="btn btn-info"  data-toggle="modal" data-target="#myModal" ><i class="fa fa-user" aria-hidden="true"></i> Iniciar sesión</button>
                     </div>
                 </div>
             </div>
@@ -77,7 +78,7 @@
                             <div class="row">
                                 <div class="col-md-12">
                                     <div class="slide_text">
-                                        <h3>Instituto Colombiano <br> de Psicometría <br><span span class="theme_color">Invierte bien, Invierte en ti. Capacítate y Asesórate con Nosotros</span></h3>
+                                        <h3>Universidad Sergio Arboelda - Sede Santa Marta<br><span span class="theme_color">Escuela de Comunicación, Periodismo y Psicología <br>  Programa de Psicología</span></h3>
                                         <br>
                                     </div>
                                 </div>
@@ -89,18 +90,27 @@
             </div>
         </div>
     </div>
-    <div class="container" style="background-color: white; height: 111px; padding-top: 20px; max-width: 800px; border-radius: 25px;box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);">
-        <form action="php/verificar.php" id="form_init" method="post">
-            <div class="row">
-                <div class="col-1"></div>
-                <div class="col-4" style="padding-top: 15px;"><input name="correo" id="correo" type="email" class="form-control" placeholder="Correo Electronico" required></div>
-                <div class="col-4" style="padding-top: 15px;"><input name="nombre" id="nombre" type="text" class="form-control" placeholder="Nombre Completo" required></div>
-                <div class="col-2" style="padding-top: -10px;"><button style="cursor: pointer;" class="contact_bt" type="submit" >Comenzar Test</button></div>
-                <div class="col-1"></div>
-            </div>
-        </form>
+    <div id="contenedor">
+        <div class="container" style="background-color: white;height: auto;padding-top: 20px;max-width: 800px;padding-bottom: 27px;border-radius: 25px;box-shadow: 2px 2px 2px 1px rgb(0 0 0 / 20%);">
+            <form action="php/verificar.php" id="form_init" method="post">
+                <div class="row" style="width: 100%; text-align: left;">
+                    <div class="col-lg-1"></div>
+                    <div class="col-10">
+                       <h3 style="font-weight: bold; color: #2C4A73;">Cordial saludo, <br> A continuación encontrará xxx xxx etc.</h3>  
+                    </div>
+                    <div class="col-lg-1"></div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-1"></div>
+                    <div class="col-lg-4" style="padding-top: 15px;"><input name="correo" id="correo" type="email" class="form-control" placeholder="Correo Electronico" required></div>
+                    <div class="col-lg-4" style="padding-top: 15px;"><input name="nombre" id="nombre" type="text" class="form-control" placeholder="Nombre Completo" required></div>
+                    <div class="col-lg-2 col-md-12" id="budiv"><button style="cursor: pointer;" class="contact_bt" type="submit" >Comenzar Test</button></div>
+                    <div class="col-lg-1"></div>
+                </div>
+            </form>
+        </div>
     </div>
-    </div>
+    
     <!-- End Banner -->
 
     <footer style="height: 60px;width: 100%;z-index: 100;position: fixed;bottom: 0;">
@@ -108,7 +118,7 @@
         	<div class="container">
 				<div class="row">
 					<div class="col-12">
-						<p class="crp">© Copyrights 2022 design by Antonio Martinez</p>
+						<p class="crp">© Copyrights 2022 design by Universidad Sergio Arboelda - Sede Santa Marta</p>
 					</div>
 				</div>
 			</div>
@@ -138,8 +148,8 @@
                         </div>
                 </div>
                 <div class="modal-footer">
-                    <button type="submit" class="btn btn-success">Entrar</button>
-                    <button type="button" class="btn btn-danger" data-dismiss="modal">Cerrar</button>
+                    <button type="submit" class="btn btn-success"><i class="fa fa-sign-in" aria-hidden="true"></i> Entrar</button>
+                    <button type="button" class="btn btn-danger" data-dismiss="modal"><i class="fa fa-times" aria-hidden="true"></i> Cerrar</button>
                 </div>
             </form>
         </div>

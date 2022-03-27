@@ -41,7 +41,8 @@ if(isset($_SESSION['logueado'])){
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.1/jquery.min.js" type="text/javascript"></script>
 	<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <link rel="stylesheet" href="//cdn.datatables.net/1.11.3/css/jquery.dataTables.min.css">
-   
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="icon" href="images/icon.png">
     <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
       <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
@@ -69,8 +70,8 @@ if(isset($_SESSION['logueado'])){
                     </div>
                     <div class="col-3"></div>
                     <div class="col-5" style="text-align:right;padding-top: 20px;">
-                        <button data-toggle="modal" data-target="#myModal" class="btn btn-info"  href="php/cerrar_sesion.php">Agregar Usuario</button>
-                        <a class="btn btn-danger"  href="php/cerrar_sesion.php">Cerrar sesión</a>
+                        <button data-toggle="modal" data-target="#myModal" class="btn btn-info"  href="php/cerrar_sesion.php"><i class="fa fa-users" aria-hidden="true"></i> Agregar Usuario</button>
+                        <a class="btn btn-danger"  href="php/cerrar_sesion.php"><i class="fa fa-sign-out" aria-hidden="true"></i> Cerrar sesión</a>
                     </div>
                 </div>
             </div>
@@ -95,6 +96,7 @@ if(isset($_SESSION['logueado'])){
                             <table id="customers" style="width: 100% !important;">
                                 <thead>
                                     <tr>
+                                        <th>Nombre</th>
                                         <th>Correo</th>
                                         <th>Negativismo</th>
                                         <th>Aquiescencia</th>
@@ -106,10 +108,27 @@ if(isset($_SESSION['logueado'])){
                                         while($fila = mysqli_fetch_array($result)){
                                     ?>
                                     <tr>
+                                        <td style="text-align: center;"><?php echo $fila[39] ?></td>
                                         <td style="text-align: center;"><?php echo $fila[1] ?></td>
-                                        <td style="text-align: center;"><?php echo $fila[37] ?></td>
-                                        <td style="text-align: center;"><?php echo $fila[38] ?></td>
-                                        <td style="text-align: center;"><a class="btn btn-success" href="detalle.php?id=<?php echo $fila[0] ?>">Ver Detalles</a></td>
+                                        <td style="text-align: center;">
+                                            <?php 
+                                                if($fila[37] >= 150){
+                                                    echo "Negativismo";
+                                                }else{
+                                                    echo "No Negativismo";
+                                                } 
+                                            ?>
+                                        </td>
+                                        <td style="text-align: center;">
+                                            <?php 
+                                                if($fila[38] >= 150){
+                                                    echo "Aquiescencia";
+                                                }else{
+                                                    echo "No Aquiescencia";
+                                                } 
+                                            ?>
+                                        </td>
+                                        <td style="text-align: center;"><a class="btn btn-success" href="detalle.php?id=<?php echo $fila[0] ?>">Ver Detalles <i class="fa fa-arrow-right" aria-hidden="true"></i></a></td>
                                     </tr>
                                     <?php 
                                         }
@@ -130,7 +149,7 @@ if(isset($_SESSION['logueado'])){
         	<div class="container">
 				<div class="row">
 					<div class="col-12">
-						<p class="crp">© Copyrights 2022 design by Antonio Martinez</p>
+						<p class="crp">© Copyrights 2022 design by Universidad Sergio Arboelda - Sede Santa Marta</p>
 					</div>
 				</div>
 			</div>
@@ -161,8 +180,8 @@ if(isset($_SESSION['logueado'])){
                         </div>
                 </div>
                 <div class="modal-footer">
-                    <button type="submit" class="btn btn-success">Registrar</button>
-                    <button type="button" class="btn btn-danger" data-dismiss="modal">Cerrar</button>
+                    <button type="submit" class="btn btn-success"><i class="fa fa-floppy-o" aria-hidden="true"></i> Registrar</button>
+                    <button type="button" class="btn btn-danger" data-dismiss="modal"><i class="fa fa-times" aria-hidden="true"></i> Cerrar</button>
                 </div>
             </form>
         </div>

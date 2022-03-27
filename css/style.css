@@ -615,7 +615,7 @@ a.navbar-brand img {
 }
 
 .slide_text h3 {
-    font-size: 55px;
+    font-size: 40px;
     font-weight: 600;
     padding: 0;
     line-height: 45px !important;
@@ -624,7 +624,7 @@ a.navbar-brand img {
 }
 
 .slide_text h3 span {
-    font-size: 28px;
+    font-size: 25px;
 }
 
 .slide_text h4 {
@@ -656,7 +656,6 @@ a.navbar-brand img {
     text-align: center;
     font-size: 18px;
     font-weight: 500;
-    margin-top: 22%;
     border-radius: 5px;
 }
 
@@ -1995,7 +1994,7 @@ ul.social_icon li {
 }
 
 .footer_bottom {
-    background: #095a83;
+    background: #2C4A73;
     padding: 15px 0;
 }
 
@@ -2244,4 +2243,24 @@ section.inner_banner h3 {
 .contact_form button:focus {
 	background: #fff;
 	color: #12385b;
+}
+
+.btn-info {
+    color: #fff;
+    background-color: #2C4A73 !important;
+    border-color: #2C4A73 !important;
+}
+
+.swal2-styled.swal2-confirm {
+	background-color: #2C4A73 !important;
+}
+
+.swal2-styled.swal2-cancel {
+	background-color: #d0b52e !important;
+}
+
+.btn-success {
+    color: #fff;
+    background-color: #d0b52e !important;
+    border-color: #d0b52e !important;
 }

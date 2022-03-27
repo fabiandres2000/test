@@ -40,7 +40,7 @@ $fila = mysqli_fetch_array($result);
             padding-top: 12px;
             padding-bottom: 12px;
             text-align: center;
-            background-color: #04AA6D;
+            background-color: #2C4A73;
             color: white;
         }
     </style>
@@ -50,7 +50,20 @@ $fila = mysqli_fetch_array($result);
          <!-- Div to capture. -->
         <div id="root" style="margin:0px auto;">
             <div style="text-align: center; width: 100%">
-                <h2>Resultados para el usuario: <?php echo $fila[1] ?></h2>
+                <table id="customers" style="width: 100% !important;">
+                    <thead>
+                        <tr>
+                            <th>Correo</th>
+                            <th>Nombre</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td style="text-align: center;"><?php echo $fila[1] ?></td>
+                            <td style="text-align: center;"><?php echo $fila[39] ?></td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
             <hr>
             <div style="width: 100%;">
@@ -58,7 +71,7 @@ $fila = mysqli_fetch_array($result);
                     <thead>
                         <tr>
                             <th>Item</th>
-                            <th>Puentaje Directo</th>
+                            <th>Puntaje Directo</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -99,7 +112,7 @@ $fila = mysqli_fetch_array($result);
                     <thead>
                         <tr>
                             <th>Item</th>
-                            <th>Puentaje Directo</th>
+                            <th>Puntaje Directo</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -140,7 +153,7 @@ $fila = mysqli_fetch_array($result);
                     <thead>
                         <tr>
                             <th>Item</th>
-                            <th>Puentaje Directo</th>
+                            <th>Puntaje Directo</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -181,7 +194,7 @@ $fila = mysqli_fetch_array($result);
                     <thead>
                         <tr>
                             <th>Item</th>
-                            <th>Puentaje Directo</th>
+                            <th>Puntaje Directo</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -222,7 +235,7 @@ $fila = mysqli_fetch_array($result);
                     <thead>
                         <tr>
                             <th>Item</th>
-                            <th>Puentaje Directo</th>
+                            <th>Puntaje Directo</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -263,7 +276,7 @@ $fila = mysqli_fetch_array($result);
                     <thead>
                         <tr>
                             <th>Item</th>
-                            <th>Puentaje Directo</th>
+                            <th>Puntaje Directo</th>
                             <th>Detalle</th>
                         </tr>
                     </thead>

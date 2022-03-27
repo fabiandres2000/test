@@ -53,7 +53,9 @@
 	<link rel="stylesheet" href="css/cronometro.css">
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.1/jquery.min.js" type="text/javascript"></script>
 	<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <!--[if lt IE 9]>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="icon" href="images/icon.png">
+	<!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
       <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
@@ -87,21 +89,13 @@
 	<div class="container" style="margin-top: 100px">	
 		<div class="row">
 			<div class="col-9">
-				<h3><span span class="theme_color">Bienvenido: <?php echo $correo ?></span></h3>
+				<h3><span span class="theme_color">Bienvenido(a): <?php echo $nombre ?></span></h3>
 			</div>
 			<div class="col-3" style="text-align: right">
-				<div class="cronometro">
-					<div id="hms"></div>
-				</div>
+			
 			</div>
 		</div>
 		<hr>
-		<div class="row">
-			<div class="col-12">
-			<h3><span span class="theme_color">Inventario de Personalidad NEO Revisado (NEO-PI-R). Forma R.</span></h3>
-				<h4>Paul T. Costa y Robert McCrae <br> Adaptación castellana: TEA S.A.</h4>
-			</div>
-		</div>
 		<div class="row">
 			<div class="col-12">
 				<h5 style="font-size: 21px; text-align: justify;">Este cuestionario consta de 240 afirmaciones en referencia a su forma de ser o comportarse. Por favor, lea cada frase con atención. Debe indicar su grado de acuerdo en la hoja de respuestas según el siguiente código:</h5>
@@ -2419,8 +2413,8 @@
 						<div class="container">
 						<div class="alert alert-success" role="alert">
 							<div class="row">
-								<div class="col-lg-9" style="padding: 15px 10px;">
-									<h1 style="font-size: 25px;font-weight: bold;color: #487449;">Ya usted respondió la totalidad de las preguntas <br> para finalizar el test, haga clic en el siguiente botón</h1>
+								<div class="col-lg-9" style="padding: 15px 10px; text-align: justify">
+									<h1 style="font-size: 25px;font-weight: bold;color: #487449;">Agradecemos su colaboración y recuerde que los resultados de esta prueba servirán para su crecimiento y desarrollo profesional.</h1>
 								</div>
 								<div class="col-lg-3">
 									<button onclick="calificar('<?php echo $correo ?>')" class="btn btn-success" style="width: 100%;height: 100%; font-size: 28px; font-weight: bold;">Finalizar <br> Intento</button>
@@ -2453,7 +2447,7 @@
 						<br>
 							<div class="row" style="text-align: center;">
 								<div class="col-12">
-									<a style="width: 40%;" href="index.html" class="btn btn-danger" type="button">Volver</a>
+									<a style="width: 40%;" href="index.html" class="btn btn-danger" type="button"><i class="fa fa-arrow-left" aria-hidden="true"></i> Volver</a>
 								</div>
 							</div>
 						</div>
@@ -2470,7 +2464,7 @@
         	<div class="container">
 				<div class="row">
 					<div class="col-12">
-						<p class="crp">© Copyrights 2022 design by Antonio Martinez</p>
+						<p class="crp">© Copyrights 2022 design by Universidad Sergio Arboelda - Sede Santa Marta</p>
 					</div>
 				</div>
 			</div>
@@ -2494,8 +2488,7 @@
 	<script src="js/pasos.js"></script>
 	<script>
 		window.onload = function() {
-			init();
-    		$('html, body').animate({scrollTop:500}, 1500);    
+    		$('html, body').animate({scrollTop:400}, 1500);    
         };
     </script>
 </body>
