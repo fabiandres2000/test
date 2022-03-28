@@ -647,7 +647,7 @@ a.navbar-brand img {
 }
 
 .contact_bt {
-	width: 138px;
+	width: 100%;
     height: 46px;
     background: #d4a81e;
     color: #fff;

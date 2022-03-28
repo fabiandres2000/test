@@ -6,19 +6,7 @@
 	//ver por cual paso va
 	$sql = "SELECT * FROM `respuestas` WHERE `correo`='$correo'";
 	$result = $con->query($sql);
-	
-	if(mysqli_num_rows($result) == 0){
-		//insert si no existe
-		$sql = "INSERT INTO `respuestas` (`correo`, `nombre_completo`) VALUES ('$correo', '$nombre')";
-		mysqli_query($con, $sql);
-
-		//ver por cual paso va
-		$sql = "SELECT * FROM `respuestas` WHERE `correo`='$correo'";
-		$result = $con->query($sql);
-		$fila = mysqli_fetch_array($result);
-	}else{
-		$fila = mysqli_fetch_array($result);
-	}
+	$fila = mysqli_fetch_array($result);
 ?>
 <!DOCTYPE html>
 <html lang="en">

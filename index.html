@@ -101,12 +101,56 @@
                     </div>
                     <div class="col-lg-1"></div>
                 </div>
-                <div class="row">
-                    <div class="col-lg-1"></div>
-                    <div class="col-lg-4" style="padding-top: 15px;"><input name="correo" id="correo" type="email" class="form-control" placeholder="Correo Electronico" required></div>
-                    <div class="col-lg-4" style="padding-top: 15px;"><input name="nombre" id="nombre" type="text" class="form-control" placeholder="Nombre Completo" required></div>
-                    <div class="col-lg-2 col-md-12" id="budiv"><button style="cursor: pointer;" class="contact_bt" type="submit" >Comenzar Test</button></div>
-                    <div class="col-lg-1"></div>
+                <div class="row" style="padding-left: 40px; padding-right: 40px;">
+                    <div class="col-lg-6" style="padding-top: 15px;"><input name="correo" id="correo" type="email" class="form-control" placeholder="Correo Electronico" required></div>
+                    <div class="col-lg-6" style="padding-top: 15px;"><input name="nombre" id="nombre" type="text" class="form-control" placeholder="Nombre Completo" required></div>
+                    <div class="col-lg-6" style="padding-top: 15px;">
+                        <select style="height: 34px;" name="sede" id="sede" class="form-control" required>
+                            <option value="Santa Marta">Santa Marta</option>
+                            <option value="Barranquilla">Barranquilla</option>
+                        </select>
+                    </div>
+                    <div class="col-lg-6" style="padding-top: 15px;">
+                        <select style="height: 34px;" name="programa" id="programa" class="form-control">
+                           <option value="">Seleccione un programa...</option>
+                           <option value="Administración de empresas">Administración de empresas</option>
+                           <option value="Comunicación social y periodismo">Comunicación social y periodismo</option>
+                           <option value="Contaduría publica ">Contaduría publica </option>
+                           <option value="Derecho">Derecho</option>
+                           <option value="Diseño digital">Diseño digital</option>
+                           <option value="Finanzas y comercio exterior">Finanzas y comercio exterior</option>
+                           <option value="Ingeniería industrial">Ingeniería industrial</option>
+                           <option value="Marketing y negocios internacionales">Marketing y negocios internacionales</option>
+                           <option value="Psicología Psicología ">Psicología </option>
+                        </select>
+                    </div>
+                    <div class="col-lg-6" style="padding-top: 15px;">
+                        <select  style="height: 34px;" name="semestre" id="semestre" class="form-control">
+                            <option value="">Semestre cursado</option>
+                            <option value="I">I Semestre</option>
+                            <option value="II">II Semestre</option>
+                            <option value="III">III Semestre</option>
+                            <option value="IV">IV Semestre</option>
+                            <option value="V">V Semestre</option>
+                            <option value="VI">VI Semestre</option>
+                            <option value="VII">VII Semestre</option>
+                            <option value="VIII">VIII Semestre</option>
+                            <option value="IX">IX Semestre</option>
+                            <option value="XXX">X Semestre</option>
+                        </select>
+                    </div>
+                    <div class="col-lg-6" style="padding-top: 15px;">
+                        <select  style="height: 34px;" name="sexo" id="sexo" class="form-control">
+                            <option value="">Sexo</option>
+                            <option value="Masculino">Masculino</option>
+                            <option value="Femenino">Femenino</option>
+                        </select>
+                    </div>
+                    <div class="col-lg-6" style="padding-top: 15px;">
+                        <label for="">Fecha de nacimiento:</label>
+                        <input id="f_nacimiento" name="f_nacimiento" type="date" required class="form-control" placeholder="Fecha de nacimiento">
+                    </div>
+                    <div class="col-lg-6"  style="padding-top: 30px;" id="budiv"><button style="cursor: pointer;" class="contact_bt" type="submit" >Comenzar Test</button></div>       
                 </div>
             </form>
         </div>

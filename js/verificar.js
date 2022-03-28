@@ -27,21 +27,24 @@ $('#form_init').submit(function (ev) {
         });          
       }, 
       success: function (data) { 
-        var formData = new FormData();
-        formData = $('#form_init').serialize();
-        var url = "test.php?"+formData;
-        if(data != ""){
+        var jsonData = JSON.parse(data);
+        debugger
+        if(jsonData.success == 1){
             Swal.fire({
-                title: data+" <br> ¿Desea continuar?",
+                title: jsonData.mensaje+" <br> ¿Desea continuar?",
                 showCancelButton: true,
                 confirmButtonText: 'Si',
                 cancelButtonText: 'No',
             }).then((result) => {
                 if (result.isConfirmed) {
-                    window.location.href = url;
+                  var url = "test.php?correo="+jsonData.correo+"&nombre="+jsonData.nombre;
+                  window.location.href = url;
                 }
             })
         }else{
+            var correo = document.getElementById("correo").value;
+            var nombre = document.getElementById("nombre").value;
+            var url = "test.php?correo="+correo+"&nombre="+nombre;
             window.location.href = url;
         }
       } 

@@ -1,11 +1,14 @@
 <?php
-ob_start();
-$id = $_GET['id'];
-session_start();
-include_once("conexion.php");
-$sql = "SELECT * FROM `calificaciones` WHERE id_calificacion  = $id ";
-$result = $con->query($sql);
-$fila = mysqli_fetch_array($result);
+    $id = $_GET['id'];
+    session_start();
+    include_once("conexion.php");
+    $sql = "SELECT * FROM `calificaciones` WHERE id_calificacion  = $id ";
+    $result = $con->query($sql);
+    $fila = mysqli_fetch_array($result);
+
+    $sql2 = "SELECT * FROM `respuestas` WHERE correo  = '$fila[1]'";
+    $result2 = $con->query($sql2);
+    $fila2 = mysqli_fetch_array($result2);
 ?> 
 <!DOCTYPE HTML>
 <html>
@@ -16,7 +19,7 @@ $fila = mysqli_fetch_array($result);
     <style type="text/css">
       /* Basic styling for root. */
         #root {
-            width: 600px;
+            width: 680px;
             height: auto;
         }
 
@@ -55,12 +58,22 @@ $fila = mysqli_fetch_array($result);
                         <tr>
                             <th>Correo</th>
                             <th>Nombre</th>
+                            <th>Sede</th>
+                            <th>Programa</th>
+                            <th>Semestre</th>
+                            <th>Sexo</th>
+                            <th>Fecha <br> de nacimiento</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
                             <td style="text-align: center;"><?php echo $fila[1] ?></td>
                             <td style="text-align: center;"><?php echo $fila[39] ?></td>
+                            <td style="text-align: center;"><?php echo $fila2[249] ?></td>
+                            <td style="text-align: center;"><?php echo $fila2[250] ?></td>
+                            <td style="text-align: center;"><?php echo $fila2[251] ?></td>
+                            <td style="text-align: center;"><?php echo $fila2[252] ?></td>
+                            <td style="text-align: center;"><?php echo $fila2[253] ?></td>
                         </tr>
                     </tbody>
                 </table>
@@ -332,7 +345,7 @@ $fila = mysqli_fetch_array($result);
 
             // Generate the PDF.
             html2pdf().from(element).set({
-            margin: 0.6,
+            margin: 0.3,
             filename: '<?php echo $fila[39] ?>.pdf',
             html2canvas: { scale: 2 },
             jsPDF: {orientation: 'portrait', unit: 'in', format: 'letter', compressPDF: true}
