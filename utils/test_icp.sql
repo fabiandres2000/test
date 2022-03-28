@@ -1,29 +1,34 @@
--- MariaDB dump 10.19  Distrib 10.4.24-MariaDB, for Win64 (AMD64)
+-- phpMyAdmin SQL Dump
+-- version 5.1.3
+-- https://www.phpmyadmin.net/
 --
--- Host: localhost    Database: test_icp
--- ------------------------------------------------------
--- Server version	10.4.24-MariaDB
+-- Servidor: 127.0.0.1
+-- Tiempo de generación: 28-03-2022 a las 18:50:56
+-- Versión del servidor: 10.4.22-MariaDB
+-- Versión de PHP: 7.4.28
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+START TRANSACTION;
+SET time_zone = "+00:00";
+
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
 /*!40101 SET NAMES utf8mb4 */;
-/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
-/*!40103 SET TIME_ZONE='+00:00' */;
-/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
-/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
-/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
-/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `calificaciones`
+-- Base de datos: `test_icp`
 --
 
-DROP TABLE IF EXISTS `calificaciones`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `calificaciones`
+--
+
 CREATE TABLE `calificaciones` (
-  `id_calificacion` int(11) NOT NULL AUTO_INCREMENT,
+  `id_calificacion` int(11) NOT NULL,
   `correo` text NOT NULL,
   `Ansiedad` int(11) NOT NULL,
   `Hostilidad` int(11) NOT NULL,
@@ -62,28 +67,26 @@ CREATE TABLE `calificaciones` (
   `Responsabilidad` int(11) NOT NULL,
   `Negativismo` int(11) NOT NULL,
   `Aquiescencia` int(11) NOT NULL,
-  `nombre_completo` text NOT NULL,
-  PRIMARY KEY (`id_calificacion`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4;
-/*!40101 SET character_set_client = @saved_cs_client */;
+  `nombre_completo` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `calificaciones`
+-- Volcado de datos para la tabla `calificaciones`
 --
 
-LOCK TABLES `calificaciones` WRITE;
-/*!40000 ALTER TABLE `calificaciones` DISABLE KEYS */;
-INSERT INTO `calificaciones` VALUES (1,'grovveip@gmail.com',13,17,18,13,19,14,94,18,13,15,20,16,19,101,18,17,13,18,11,21,98,15,15,20,12,14,15,91,21,16,17,20,13,17,104,181,42,'Fabian Quintero'),(2,'grovveip3@gmail.com',13,17,18,14,19,13,94,15,12,16,19,15,20,97,15,17,14,18,11,21,96,17,15,20,12,12,17,93,17,15,19,20,13,17,101,190,40,'Fabian Quintero'),(3,'grovveip4@gmail.com',16,20,18,20,16,16,106,24,16,16,14,18,16,104,18,14,20,12,20,12,96,14,18,14,18,16,18,98,20,12,18,15,17,20,102,120,120,'Fabian Quintero'),(4,'grovveip2@gmail.com',13,16,15,14,19,13,90,15,13,19,20,15,19,101,15,17,17,19,11,21,100,17,15,17,11,13,15,88,17,15,17,20,13,17,99,84,156,'Fabian Quintero'),(5,'root@gamal.com',13,17,18,13,16,16,93,15,13,17,14,12,16,87,20,11,12,18,14,18,93,11,21,17,18,16,12,95,17,13,12,14,16,15,87,220,15,'Andres Quintero '),(6,'root2@gamal.com',13,17,19,14,19,13,95,15,13,16,21,15,18,98,13,17,16,18,11,20,95,17,16,20,12,13,15,93,17,15,18,19,13,17,99,194,42,'Andres Quintero ');
-/*!40000 ALTER TABLE `calificaciones` ENABLE KEYS */;
-UNLOCK TABLES;
+INSERT INTO `calificaciones` (`id_calificacion`, `correo`, `Ansiedad`, `Hostilidad`, `Depresion`, `Ansiedad_Social`, `Impulsividad`, `Vulnerabilidad`, `Neuroticismo`, `Cordialidad`, `Gregarismo`, `Asertividad`, `Actividad`, `Busqueda_emociones`, `Emociones_positivas`, `Extraversion`, `Fantasia`, `Estetica`, `Sentimientos`, `Acciones`, `Ideas`, `Valores`, `Apertura`, `Confianza`, `Franqueza`, `Altruismo`, `A_Conciliadora`, `Modestia`, `Sensibilidad`, `Amabilidad`, `Competencia`, `Orden`, `Deber`, `Logro`, `Autodisciplina`, `Deliberacion`, `Responsabilidad`, `Negativismo`, `Aquiescencia`, `nombre_completo`) VALUES
+(1, 'grovveip@gmail.com', 14, 18, 14, 22, 16, 16, 100, 21, 13, 22, 10, 12, 15, 93, 21, 12, 20, 14, 14, 19, 100, 12, 19, 8, 21, 16, 12, 88, 17, 17, 18, 11, 16, 14, 93, 159, 74, 'Fabian Quintero'),
+(2, 'grovveip2@gmail.com', 14, 17, 17, 15, 19, 13, 95, 16, 13, 16, 20, 15, 20, 100, 15, 18, 14, 18, 11, 21, 97, 17, 15, 20, 12, 13, 15, 92, 17, 15, 18, 20, 13, 17, 100, 195, 40, 'Fabian Quintero'),
+(3, 'grovveipg@gmail.com', 14, 17, 9, 14, 19, 13, 86, 16, 13, 16, 14, 9, 20, 88, 21, 11, 14, 18, 11, 21, 96, 11, 19, 12, 18, 12, 10, 82, 16, 15, 11, 13, 13, 17, 85, 194, 39, 'Fabian Quintero'),
+(4, 'grovveip4@gmail.com', 17, 14, 11, 14, 17, 17, 90, 12, 16, 16, 15, 12, 15, 86, 18, 14, 14, 18, 14, 18, 96, 14, 18, 12, 17, 16, 12, 89, 14, 18, 12, 14, 16, 14, 88, 232, 0, 'Andres'),
+(5, 'grovveip5@gmail.com', 22, 14, 17, 14, 13, 16, 96, 12, 22, 10, 19, 15, 17, 95, 12, 20, 14, 18, 17, 11, 92, 20, 13, 20, 12, 13, 18, 96, 14, 18, 13, 20, 19, 20, 104, 162, 75, 'Daniela Quintero');
+
+-- --------------------------------------------------------
 
 --
--- Table structure for table `respuestas`
+-- Estructura de tabla para la tabla `respuestas`
 --
 
-DROP TABLE IF EXISTS `respuestas`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `respuestas` (
   `correo` text NOT NULL,
   `preg_1` int(11) DEFAULT NULL,
@@ -334,52 +337,82 @@ CREATE TABLE `respuestas` (
   `bloque_6` int(11) DEFAULT NULL,
   `estado_calificado` int(11) DEFAULT NULL,
   `nombre_completo` text DEFAULT NULL,
-  PRIMARY KEY (`correo`(100))
+  `sede` text DEFAULT NULL,
+  `programa` text DEFAULT NULL,
+  `semestre` text DEFAULT NULL,
+  `sexo` text DEFAULT NULL,
+  `fecha_nacimiento` text DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `respuestas`
+-- Volcado de datos para la tabla `respuestas`
 --
 
-LOCK TABLES `respuestas` WRITE;
-/*!40000 ALTER TABLE `respuestas` DISABLE KEYS */;
-INSERT INTO `respuestas` VALUES ('',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'Fabian Quintero'),('grovveip2@gmail.com',4,4,4,4,4,4,4,4,4,4,4,4,4,4,3,4,4,3,3,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,1,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,1,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,2,1,1,1,1,1,1,1,1,1,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,'Fabian Quintero'),('grovveip3@gmail.com',1,1,1,1,1,1,2,2,1,1,1,1,1,1,1,1,2,1,1,1,1,1,1,1,1,1,1,1,2,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,2,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,2,1,1,1,1,1,1,1,2,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,2,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,2,1,1,1,1,1,1,1,1,2,1,1,1,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,3,4,4,4,4,4,4,4,4,4,4,4,4,3,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,2,1,1,1,1,1,1,1,1,'Fabian Quintero'),('grovveip4@gmail.com',1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,2,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,3,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,1,1,'Fabian Quintero'),('grovveip@gmail.com',0,3,2,2,2,2,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,2,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,2,1,2,1,2,1,1,1,1,1,1,1,1,1,2,1,1,1,2,1,2,2,1,2,2,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,2,2,2,2,3,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,3,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,'Fabian Quintero'),('root2@gamal.com',1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,2,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,2,1,1,1,1,3,1,1,1,1,1,1,1,2,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,2,1,1,1,3,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,3,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,2,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,'Andres Quintero '),('root@gamal.com',0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,2,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,2,1,1,1,1,1,1,1,1,3,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,2,1,4,4,4,4,4,4,4,4,4,4,4,3,0,0,0,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,4,2,2,3,2,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,'Andres Quintero ');
-/*!40000 ALTER TABLE `respuestas` ENABLE KEYS */;
-UNLOCK TABLES;
+INSERT INTO `respuestas` (`correo`, `preg_1`, `preg_2`, `preg_3`, `preg_4`, `preg_5`, `preg_6`, `preg_7`, `preg_8`, `preg_9`, `preg_10`, `preg_11`, `preg_12`, `preg_13`, `preg_14`, `preg_15`, `preg_16`, `preg_17`, `preg_18`, `preg_19`, `preg_20`, `preg_21`, `preg_22`, `preg_23`, `preg_24`, `preg_25`, `preg_26`, `preg_27`, `preg_28`, `preg_29`, `preg_30`, `preg_31`, `preg_32`, `preg_33`, `preg_34`, `preg_35`, `preg_36`, `preg_37`, `preg_38`, `preg_39`, `preg_40`, `bloque_1`, `preg_41`, `preg_42`, `preg_43`, `preg_44`, `preg_45`, `preg_46`, `preg_47`, `preg_48`, `preg_49`, `preg_50`, `preg_51`, `preg_52`, `preg_53`, `preg_54`, `preg_55`, `preg_56`, `preg_57`, `preg_58`, `preg_59`, `preg_60`, `preg_61`, `preg_62`, `preg_63`, `preg_64`, `preg_65`, `preg_66`, `preg_67`, `preg_68`, `preg_69`, `preg_70`, `preg_71`, `preg_72`, `preg_73`, `preg_74`, `preg_75`, `preg_76`, `preg_77`, `preg_78`, `preg_79`, `preg_80`, `bloque_2`, `preg_81`, `preg_82`, `preg_83`, `preg_84`, `preg_85`, `preg_86`, `preg_87`, `preg_88`, `preg_89`, `preg_90`, `preg_91`, `preg_92`, `preg_93`, `preg_94`, `preg_95`, `preg_96`, `preg_97`, `preg_98`, `preg_99`, `preg_100`, `preg_101`, `preg_102`, `preg_103`, `preg_104`, `preg_105`, `preg_106`, `preg_107`, `preg_108`, `preg_109`, `preg_110`, `preg_111`, `preg_112`, `preg_113`, `preg_114`, `preg_115`, `preg_116`, `preg_117`, `preg_118`, `preg_119`, `preg_120`, `bloque_3`, `preg_121`, `preg_122`, `preg_123`, `preg_124`, `preg_125`, `preg_126`, `preg_127`, `preg_128`, `preg_129`, `preg_130`, `preg_131`, `preg_132`, `preg_133`, `preg_134`, `preg_135`, `preg_136`, `preg_137`, `preg_138`, `preg_139`, `preg_140`, `preg_141`, `preg_142`, `preg_143`, `preg_144`, `preg_145`, `preg_146`, `preg_147`, `preg_148`, `preg_149`, `preg_150`, `preg_151`, `preg_152`, `preg_153`, `preg_154`, `preg_155`, `preg_156`, `preg_157`, `preg_158`, `preg_159`, `preg_160`, `bloque_4`, `preg_161`, `preg_162`, `preg_163`, `preg_164`, `preg_165`, `preg_166`, `preg_167`, `preg_168`, `preg_169`, `preg_170`, `preg_171`, `preg_172`, `preg_173`, `preg_174`, `preg_175`, `preg_176`, `preg_177`, `preg_178`, `preg_179`, `preg_180`, `preg_181`, `preg_182`, `preg_183`, `preg_184`, `preg_185`, `preg_186`, `preg_187`, `preg_188`, `preg_189`, `preg_190`, `preg_191`, `preg_192`, `preg_193`, `preg_194`, `preg_195`, `preg_196`, `preg_197`, `preg_198`, `preg_199`, `preg_200`, `bloque_5`, `preg_201`, `preg_202`, `preg_203`, `preg_204`, `preg_205`, `preg_206`, `preg_207`, `preg_208`, `preg_209`, `preg_210`, `preg_211`, `preg_212`, `preg_213`, `preg_214`, `preg_215`, `preg_216`, `preg_217`, `preg_218`, `preg_219`, `preg_220`, `preg_221`, `preg_222`, `preg_223`, `preg_224`, `preg_225`, `preg_226`, `preg_227`, `preg_228`, `preg_229`, `preg_230`, `preg_231`, `preg_232`, `preg_233`, `preg_234`, `preg_235`, `preg_236`, `preg_237`, `preg_238`, `preg_239`, `preg_240`, `bloque_6`, `estado_calificado`, `nombre_completo`, `sede`, `programa`, `semestre`, `sexo`, `fecha_nacimiento`) VALUES
+('grovveip2@gmail.com', 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 'Fabian Quintero', 'Santa Marta', 'Derecho', 'II', 'Masculino', '2022'),
+('grovveip4@gmail.com', 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 1, 1, 1, 1, 1, 1, 1, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 1, 1, 1, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 'Andres', 'Barranquilla', 'Administración de empresas', 'II', 'Masculino', '2022'),
+('grovveip5@gmail.com', 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 1, 1, 1, 1, 1, 1, 1, 2, 1, 1, 1, 1, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 3, 4, 4, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 1, 1, 'Daniela Quintero', 'Santa Marta', 'Administración de empresas', 'I', 'Masculino', '2007-06-12'),
+('grovveip@gmail.com', 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 3, 1, 1, 1, 1, 0, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 3, 2, 3, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 4, 4, 4, 3, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 3, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 1, 1, 1, 1, 1, 1, 1, 1, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 'Fabian Quintero', 'Barranquilla', 'Administración de empresas', 'II', 'Masculino', '2022'),
+('grovveipg@gmail.com', 0, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 1, 1, 1, 1, 1, 1, 0, 4, 4, 3, 4, 4, 4, 4, 4, 3, 4, 4, 4, 4, 4, 4, 4, 4, 3, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 3, 4, 4, 4, 4, 4, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 1, 1, 1, 1, 1, 'Fabian Quintero', 'Santa Marta', 'Administración de empresas', 'VIII', 'Masculino', '2022');
+
+-- --------------------------------------------------------
 
 --
--- Table structure for table `usuarios`
+-- Estructura de tabla para la tabla `usuarios`
 --
 
-DROP TABLE IF EXISTS `usuarios`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `usuarios` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `id` int(11) NOT NULL,
   `usuario` text NOT NULL,
-  `password` text NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4;
-/*!40101 SET character_set_client = @saved_cs_client */;
+  `password` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `usuarios`
+-- Volcado de datos para la tabla `usuarios`
 --
 
-LOCK TABLES `usuarios` WRITE;
-/*!40000 ALTER TABLE `usuarios` DISABLE KEYS */;
-INSERT INTO `usuarios` VALUES (1,'root','7a2a79f39f1b2a27880a8053029685f7');
-/*!40000 ALTER TABLE `usuarios` ENABLE KEYS */;
-UNLOCK TABLES;
-/*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
+INSERT INTO `usuarios` (`id`, `usuario`, `password`) VALUES
+(1, 'root', '7a2a79f39f1b2a27880a8053029685f7');
 
-/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
-/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
-/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
+--
+-- Índices para tablas volcadas
+--
+
+--
+-- Indices de la tabla `calificaciones`
+--
+ALTER TABLE `calificaciones`
+  ADD PRIMARY KEY (`id_calificacion`);
+
+--
+-- Indices de la tabla `respuestas`
+--
+ALTER TABLE `respuestas`
+  ADD PRIMARY KEY (`correo`(100));
+
+--
+-- Indices de la tabla `usuarios`
+--
+ALTER TABLE `usuarios`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- AUTO_INCREMENT de las tablas volcadas
+--
+
+--
+-- AUTO_INCREMENT de la tabla `calificaciones`
+--
+ALTER TABLE `calificaciones`
+  MODIFY `id_calificacion` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
+--
+-- AUTO_INCREMENT de la tabla `usuarios`
+--
+ALTER TABLE `usuarios`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+COMMIT;
+
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
-/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
-
--- Dump completed on 2022-03-26 18:00:06
